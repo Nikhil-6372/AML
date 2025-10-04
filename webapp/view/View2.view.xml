@@ -5,7 +5,6 @@
     xmlns:f="sap.ui.layout.form"
     xmlns:core="sap.ui.core">
 
-     
     <Page id="page" showHeader="true">
         <customHeader>
             <Bar>
@@ -16,13 +15,12 @@
         </customHeader>
 
         <content>
-            
             <Panel headerText="Search Details" expandable="true" expanded="true">
                 <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2"
                               emptySpanL="6" emptySpanM="6">
                     <f:content>
 
-                        
+                        <!-- Maint Plant From-To -->
                         <Label text="Maint Plant"/>
                         <HBox>
                             <Input id="idPlantFrom" placeholder="From" width="150px"/>
@@ -31,7 +29,7 @@
                             <Button icon="sap-icon://journey-arrive" tooltip="Search" class="sapUiSmallMarginBegin"/>
                         </HBox>
 
-                        
+                        <!-- Plant Section From-To -->
                         <Label text="Plant Section"/>
                         <HBox>
                             <Input id="idSectionFrom" placeholder="From" width="150px"/>
@@ -40,77 +38,45 @@
                             <Button icon="sap-icon://journey-arrive" tooltip="Search" class="sapUiSmallMarginBegin"/>
                         </HBox>
 
+                        <!-- Location From-To -->
                         <Label text="Location"/>
                         <HBox>
                             <Input id="idLocationFrom" placeholder="From" width="150px"/>
                             <Text text="To" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
                             <Input id="idLocationTo" placeholder="To" width="150px"/>
-                            <Button icon="sap-icon://journey-arrive" tooltip="Serch" class="sapUiSmallMarginBegin"/>
+                            <Button icon="sap-icon://journey-arrive" tooltip="Search" class="sapUiSmallMarginBegin"/>
                         </HBox>
 
+                        <!-- Planner Group From-To -->
                         <Label text="Planner Group"/>
                         <HBox>
                             <Input id="idPlannerGroupFrom" placeholder="From" width="150px"/>
                             <Text text="To" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
                             <Input id="idPlannerGroupTo" placeholder="To" width="150px"/>
-                            <Button icon="sap-icon://journey-arrive" tooltip="Serch" class="sapUiSmallMarginBegin"/>
+                            <Button icon="sap-icon://journey-arrive" tooltip="Search" class="sapUiSmallMarginBegin"/>
                         </HBox>
 
+                        <!-- Equipment From-To -->
                         <Label text="Equipment"/>
                         <HBox>
                             <Input id="idEquipmentFrom" placeholder="From" width="150px"/>
                             <Text text="To" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
                             <Input id="idEquipmentTo" placeholder="To" width="150px"/>
-                            <Button icon="sap-icon://journey-arrive" tooltip="Serch" class="sapUiSmallMarginBegin"/>
+                            <Button icon="sap-icon://journey-arrive" tooltip="Search" class="sapUiSmallMarginBegin"/>
                         </HBox>
 
-                        <Label text="Functional Location"/>
-                        <HBox>
-                            <Input id="idFunctionalLocationFrom" placeholder="From" width="150px"/>
-                            <Text text="To" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
-                            <Input id="idFunctionalLocationTo" placeholder="To" width="150px"/>
-                            <Button icon="sap-icon://journey-arrive" tooltip="Serch" class="sapUiSmallMarginBegin"/>
-                        </HBox>
-
-                        <Label text="Maintenance Order Numbers"/>
-                        <HBox>
-                            <Input id="idMaintOrderFrom" placeholder="From" width="150px"/>
-                            <Text text="To" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
-                            <Input id="idMaintOrderTo" placeholder="To" width="150px"/>
-                            <Button icon="sap-icon://journey-arrive" tooltip="Serch" class="sapUiSmallMarginBegin"/>
-                        </HBox>
-
-                        <Label text="Created By" />
-                        <HBox>
-                            <Input id="idCreatedByFrom" placeholder="From" width="150px" />
-                            <Text text="To" class="sapUiSmallMarginBegin sapUiSmallMarginEnd" />
-                            <Input id="idCreatedByTo" placeholder="To" width="150px"/> 
-                            <Button icon="sap-icon://journey-arrive" tooltip="Serch" class="sapUiSmallMarginBegin"/>
-                        </HBox>
-
-                        <Label text="Created On" />
-                        <HBox alignItems="Center">
-                        <DatePicker id="idCreatedOnFrom" placeholder="From" width="150px"/>
-                        <Text text="To" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
-                        <DatePicker id="idCreatedOnTo" placeholder="To" width="150px"/>
-                        <Button icon="sap-icon://journey-arrive" tooltip="Search" class="sapUiSmallMarginBegin"/>
-                        </HBox>
-
-                        <Label text="Basic Start Date"/>
-                        <DatePicker id="idBasicStartDate"/>
-
-
-                        
+                        <!-- Buttons aligned right -->
                         <Label text=""/>
                         <FlexBox justifyContent="End">
                             <Button icon="sap-icon://accept" text="Go" type="Accept" class="sapUiTinyMarginEnd"/>
                             <Button icon="sap-icon://reset" text="Reset" type="Reject"/>
                         </FlexBox>
+
                     </f:content>
                 </f:SimpleForm>
             </Panel>
 
-            
+            <!-- Scrollable Table -->
             <ScrollContainer width="100%" height="auto" horizontal="true" vertical="false">
                 <Table items="{pm>/PMData}" growing="true" growingScrollToLoad="true" width="auto" class="sapUiResponsiveMargin" inset="false">
                     <columns>
@@ -147,7 +113,6 @@
                     </items>
                 </Table>
             </ScrollContainer>
-
         </content>
     </Page>
 </mvc:View>
