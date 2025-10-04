@@ -1,0 +1,125 @@
+<mvc:View controllerName="com.aml.amlui07.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+
+    <!-- Page with centered, big title -->
+    <Page id="page" showHeader="true">
+        <customHeader>
+            <Bar>
+                <contentMiddle>
+                    <Title text="Component Change and Service Forecast" level="H1" class="myPageTitle"/>
+                </contentMiddle>
+            </Bar>
+        </customHeader>
+
+        <content>
+            <!-- Search Panel -->
+            <Panel headerText="Search Details" expandable="true" expanded="true">
+                <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2"
+                              emptySpanL="6" emptySpanM="6">
+                    <f:content>
+
+                        <!-- Maint Plant From-To -->
+                        <Label text="Maint Plant"/>
+                        <HBox>
+                            <Input id="idPlantFrom" placeholder="From" width="120px"/>
+                            <Text text="To" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+                            <Input id="idPlantTo" placeholder="To" width="120px"/>
+                        </HBox>
+
+                        <!-- Plant Section From-To -->
+                        <Label text="Plant Section"/>
+                        <HBox>
+                            <Input id="idSectionFrom" placeholder="From" width="120px"/>
+                            <Text text="To" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+                            <Input id="idSectionTo" placeholder="To" width="120px"/>
+                        </HBox>
+
+                        <!-- Requirement Date From-To -->
+                        <Label text="Requirement Date"/>
+                        <HBox>
+                            <DatePicker id="idReqDateFrom" width="120px"/>
+                            <Text text="To" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+                            <DatePicker id="idReqDateTo" width="120px"/>
+                        </HBox>
+
+                        <!-- Single Input Fields -->
+                        <Label text="Location"/>
+                        <Input id="idLocation" placeholder="Enter Location"/>
+
+                        <Label text="Planner Group (1.Equipment,2.Functional Location)"/>
+                        <Input id="idPlannerGroup" placeholder="Enter Planner Group"/>
+
+                        <Label text="Maint Order Numbers"/>
+                        <Input id="idMaintOrder" placeholder="Enter Maint Order Numbers"/>
+
+                        <Label text="Created By"/>
+                        <Input id="idCreatedBy" placeholder="Enter Created By"/>
+
+                        <Label text="Created On"/>
+                        <DatePicker id="idCreatedOn"/>
+
+                        <Label text="Basic Start Date"/>
+                        <DatePicker id="idBasicStartDate"/>
+
+                        <Label text="Material No."/>
+                        <Input id="idMaterialNo" placeholder="Enter Material No."/>
+
+                        <Label text="Material Description"/>
+                        <Input id="idMaterialDesc" placeholder="Enter Material Description"/>
+
+                        <Label text="Required Quantity"/>
+                        <Input id="idReqQuantity" placeholder="Enter Required Quantity"/>
+
+                        <!-- Buttons aligned right -->
+                        <Label text=""/>
+                        <FlexBox justifyContent="End">
+                            <Button icon="sap-icon://accept" text="Go" type="Accept" class="sapUiTinyMarginEnd"/>
+                            <Button icon="sap-icon://reset" text="Reset" type="Reject"/>
+                        </FlexBox>
+                    </f:content>
+                </f:SimpleForm>
+            </Panel>
+
+            <!-- Output Table -->
+            <Table items="{pm>/PMData}" class="sapUiResponsiveMargin" inset="false">
+                <columns>
+                    <Column><Text text="Maint Plant"/></Column>
+                    <Column><Text text="Plant Section"/></Column>
+                    <Column><Text text="Location"/></Column>
+                    <Column><Text text="Planner Group"/></Column>
+                    <Column><Text text="Maint Order Number"/></Column>
+                    <Column><Text text="Created By"/></Column>
+                    <Column><Text text="Created On"/></Column>
+                    <Column><Text text="Basic Start Date"/></Column>
+                    <Column><Text text="Material No."/></Column>
+                    <Column><Text text="Material Description"/></Column>
+                    <Column><Text text="Required Quantity"/></Column>
+                    <Column><Text text="Requirement Date"/></Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{pm>MaintPlant}"/>
+                            <Text text="{pm>PlantSection}"/>
+                            <Text text="{pm>Location}"/>
+                            <Text text="{pm>PlannerGroup}"/>
+                            <Text text="{pm>MaintOrderNumber}"/>
+                            <Text text="{pm>CreatedBy}"/>
+                            <Text text="{pm>CreatedOn}"/>
+                            <Text text="{pm>BasicStartDate}"/>
+                            <Text text="{pm>MaterialNo}"/>
+                            <Text text="{pm>MaterialDescription}"/>
+                            <Text text="{pm>RequiredQuantity}"/>
+                            <Text text="{pm>RequirementDate}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+        </content>
+    </Page>
+</mvc:View>
